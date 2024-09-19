@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+</head>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up full height */
+}
+
+.w-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%; /* Make the row take the full height of the screen */
+    width: 100%;
+}
+
+.w-col {
+    box-sizing: border-box;
+    height: 100%; /* Make each column take full height */
+    padding: 20px;
+}
+
+.w-col-6 {
+    width: 50%;
+    height: 100%; /* Make each half-column take full height */
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.paragraph {
+    font-size: 16px;
+}
+
+.w-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.w-col {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+}
+
+.w-col-6 {
+    width: 50%;
+    height: 100%;
+}
+
+.heading {
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.paragraph {
+    font-size: 16px;
+}
+
+.section-3 {
+    display: flexbox;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px;
+}
+
+.button-3 {
+    background-color: #000000;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.image-2 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optional: Add background color to right column for visibility */
+.column-2 {
+    background-color: #8080804f;
+    height: 100%;
+}
+
+</style>
+
+<body>
+    <div class="w-row">
+        <div class="column w-col w-col-6">
+            <h1 class="heading">Protein Classifier</h1>
+            <p class="paragraph">Deep learning has been gaining a lot of popularity as many scientists and engineers are using these models to solve and optimize problems. On of the most important appliations involves classifying protein sequence data. This project focuses on developing a protein sequence classification model in which the sequential data's family is known using Pfam. Using tensorflow, Keras, and seaborn, the data is checked, prepped, accounted for bias by filtering for classifications with at least 1200 observations. It is then preprocessed by converitng the sequences into integers through a dictionary and padded so they are all of equal length. The to_categorical function is used to transform the class vector into a binary class matrix. The model is tuned with mlfow UI.</p>
+            <section class="section-3">
+                <a href="https://github.com/cmprzekop1/proteinclassifier24" class="button-3 w-button">View Code</a>
+                <a href="index.html" class="button-3 w-button">Home</a>
+            </section>
+        </div>
+        <div class="column-2 w-col w-col-6"><img src="images/18.png" loading="lazy" width="417" alt="" class="image-2"></div>
+    </div>
+    <!--<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.mindc5e7f18c8.js?site=668b5b525c62aef5bb936ff7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OssuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+    <script src="js/webflow.js" type="text/javascript"></script>
+</body>

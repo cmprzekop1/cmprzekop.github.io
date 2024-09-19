@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+</head>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up full height */
+}
+
+.w-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%; /* Make the row take the full height of the screen */
+    width: 100%;
+}
+
+.w-col {
+    box-sizing: border-box;
+    height: 100%; /* Make each column take full height */
+    padding: 20px;
+}
+
+.w-col-6 {
+    width: 50%;
+    height: 100%; /* Make each half-column take full height */
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.paragraph {
+    font-size: 16px;
+}
+
+.w-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.w-col {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+}
+
+.w-col-6 {
+    width: 50%;
+    height: 100%;
+}
+
+.heading {
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+
+.paragraph {
+    font-size: 16px;
+}
+
+.section-3 {
+    display: flexbox;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px;
+}
+
+.button-3 {
+    background-color: #000000;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.image-2 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optional: Add background color to right column for visibility */
+.column-2 {
+    background-color: #800080;
+    height: 100%;
+}
+
+
+.image-2 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optional: Add background color to right column for visibility */
+.column-2 {
+    background-color: #fdc0ff; /* Purple color */
+    height: 100%; /* Ensure it stretches to the bottom */
+}
+
+</style>
+
+<body>
+    <div class="w-row">
+        <div class="column w-col w-col-6">
+            <h1 class="heading">Stock Backtester</h1>
+            <p class="paragraph">A Python/SQL Backend stock back-testing and analysis MVC style React web app. It aims to backtest and analyze trading strategies. It has several built-in strategies with functionality for users to develop and insert their own python strategies. It features a Fama French statistic report that utilizes alpha and beta statistics.</p>
+            <section class="section-3">
+                <a href="https://github.com/cmrzekop1/quanttrader" class="button-3 w-button">View Code</a>
+                <a href="index.html" class="button-3 w-button">Home</a>
+            </section>
+        </div>
+        <div class="column-2 w-col w-col-6"><img src="images/12.png" loading="lazy" width="417" alt="" class="image-2"></div>
+    </div>
+    <!--<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.mindc5e7f18c8.js?site=668b5b525c62aef5bb936ff7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OssuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+    <script src="js/webflow.js" type="text/javascript"></script>
+</body>
