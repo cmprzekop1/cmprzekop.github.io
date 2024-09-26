@@ -6,20 +6,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-/* Container for the social links */
-html, body {
-    justify-content: center;
-}
-.load {
-    max-width: 100%;
-}
 .social {
     display: flex;
     justify-content: center;
     align-items: center; /* Center items vertically if needed */
 }
 
-/* Style for the list itself */
 .social ul {
     display: flex; /* Arrange list items horizontally */
     list-style-type: none; /* Remove bullet points */
@@ -40,56 +32,26 @@ html, body {
 }
 
 .contact-img-2 {
-    max-width: 50px; /* Control the size of images */
+    max-width: 70px; /* Control the size of images */
     display: block;
 }
 .contact-img-3 {
     max-width: 90px; /* Control the size of images */
     display: block;
 }
-.form_wrapper {
-    margin-bottom: 18px;
-    margin-top: 2px;
-    margin-left: 33%;
-    padding-left: 5%;
-    padding-right: 5%;
-    float: none;
-    clear: both;
-    width: 100%;
-    max-width: 500px;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-}
-.form {
+.contact-img-4{
+    max-width: 60px;
     display: block;
-    margin-top: 0em;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-}
-form input[type="text"],
-form textarea,
-form input[type="submit"] {
-    font-family: Ubuntu, Helvetica, sans-serif;
-    display: block;
-    width: 100%; /* Make the inputs take up full width */
-    margin-bottom: 15px; /* Add space between inputs */
-    padding: 10px; /* Optional: Add padding inside inputs */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-form textarea {
-    height: 100px; /* You can adjust the height as needed */
 }
 </style>
+
 <body>
     <div class = "load">
         <section id="Top" class="section"></section>
         <div class="nav-menu-three">
             <ul role="list" class="nav-menu-block w-list-unstyled">
                 <li>
-                    <a href="about.html" class = "nav-link">WELCOME TO MY PAGE</a>
+                    <a href="/about.html" class = "nav-link">WELCOME TO MY PAGE</a>
                 </li>
                 <li>
                     <a href="index.html" class="nav-link">PROJECTS</a>
@@ -101,119 +63,43 @@ form textarea {
         </div>
 
         <div class = "Heading">
-            <div class="title">contact</div>
+            <div class="title">welcome to my page</div>
         </div>
-        <div class = "form_wrapper">
-            <div class = form>
-                <form action="https://postmail.invotes.com/send"
-                method="post" id="email_form">
-                <label form="subject" style="font-family: Ubuntu, Helvetica, sans-serif;">Name *</label>
-                <input type="text" name="subject" placeholder="Your name..." />
-                <textarea name="text" placeholder="Message"></textarea>
-                <input type="hidden" name="access_token" value="ksk0sqtva4s91k007dp7akva" />
-                <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
-            
-        
-                <!-- set the reply-to address -->
-                <input type="text" name="reply_to" placeholder="your email" />
-        
-                <!-- to split your message into 160 chars
-                    for an sms gateway -->
-                <input type="hidden" name="sms_format" value="true" />
-            
-                <input id="submit_form" type="submit" value="Send" />
-                <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
-                <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
-                </form>
-            </div>
-        </div>
-        <div class="social">
-            <ul>
-                <li>
-                    <a href="https://www.linkedin.com/in/charles-przekop-76504122a/" target = "_blank">
-                        <img src="images/LI-In-Bug.png" class="contact-img-1">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/cmprzekop1" target = "_blank">
-                        <img src="images/github-mark.png" class="contact-img-2">
-                    </a>
-                </li>
-
-            </ul>
+        <div class = "Lines">
+            <div class = "txt">my name is <a href = "contact.html" style="text-decoration: none;" class="txt-1">Charles Przekop</a></div>
+            <div class = "txt">I am finishing my senior year at Boston University</div>
+            <div class = "txt">I study biomedical engineering and computer science</div>
+            <div class = "txt">in my free time I really enjoy playing basketball, cooking, and reading Stephen King</div>
+            <div class = "txt">check out my <a href="index.html" style = "text-decoration: none;" class="txt-2">projects</a>!</div>
         </div>
     </div>
-    <div id="popupMessage" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p id="popupText"></p>
-        <button onclick="closePopup()">Close</button>
+    <div class="social">
+        <ul>
+            <li>
+                <a href="https://www.broadinstitute.org/" target = "_blank">
+                <img src="images/broad.jfif" class="contact-img-1">
+            </li>
+            <li>
+                <a href="https://www.spectrumcontrol.com/" target="_blank">
+                    <img src="images/spect.jpg" class="contact-img-2">
+                </a>
+            </li>
+            <li>
+                <a href="https://catalog.mit.edu/mit/research/broad-institute/" target="_blank">
+                    <img src="images/mit.png" class="contact-img-2">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/" target="_blank">
+                    <img src="images/bu.png" class="contact-img-4">
+                </a>
+            </li>
+        </ul>
     </div>
 
 </body>
 
 
-<script>
-//Prevents button from being pressed more than once
-var submitButton = document.getElementById("submit_form");
-var form = document.getElementById("email_form");
-form.addEventListener("submit", function (e) {
-    setTimeout(function() {
-        submitButton.value = "Sending...";
-        submitButton.disabled = true;
-    }, 1);
-});
-document.getElementById('email_form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-    const submitButton = document.getElementById('submit_form');
-    submitButton.value = 'Sending...'; // Change the button text to indicate it's sending
-    submitButton.disabled = true; // Disable the button to prevent multiple submissions
-
-    const formData = new FormData(this);
-
-    // Convert FormData to URL-encoded string using URLSearchParams
-    const urlEncodedData = new URLSearchParams();
-    formData.forEach((value, key) => {
-        urlEncodedData.append(key, value);
-    });
-
-    // Send the form data via fetch with explicit headers for URL encoding
-    fetch('https://postmail.invotes.com/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded', // Set correct header
-        },
-        body: urlEncodedData.toString() // Send URL-encoded data
-    })
-    .then(response => {
-        if (response.ok) {
-            showPopup('Email Successfully Sent!'); // Handle success
-        } else {
-            return response.text().then(text => { // Try to get response text if available
-                throw new Error(text || 'Network response was not ok');
-            });
-        }
-    })
-    .catch(error => {
-        console.error('There was an error:', error);
-        showPopup('Email could not be sent: ' + error.message); // Display detailed error
-    })
-    .finally(() => {
-        submitButton.value = 'Send'; // Reset the button text
-        submitButton.disabled = false; // Re-enable the button
-    });
-});
-
-function showPopup(message) {
-    document.getElementById('popupText').innerText = message;
-    document.getElementById('popupMessage').style.display = 'block';
-}
-
-function closePopup() {
-    document.getElementById('popupMessage').style.display = 'none';
-}
-
-</script> 
 
 
 
