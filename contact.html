@@ -7,6 +7,9 @@
 </head>
 <style>
 /* Container for the social links */
+html, body {
+    justify-content: center;
+}
 .load {
     max-width: 100%;
 }
@@ -26,14 +29,59 @@
 /* Individual list items */
 .social li {
     margin: 0 15px; /* Add space between list items */
+    margin-bottom: 20px;
 }
 
 /* Contact images */
-.contact-img-1, .contact-img-2, .contact-img-3 {
-    max-width: 50px; /* Control the size of images */
+
+.contact-img-1 {
+    max-width: 60px; /* Control the size of images */
     display: block;
 }
 
+.contact-img-2 {
+    max-width: 50px; /* Control the size of images */
+    display: block;
+}
+.contact-img-3 {
+    max-width: 90px; /* Control the size of images */
+    display: block;
+}
+.form_wrapper {
+    margin-bottom: 18px;
+    margin-top: 2px;
+    margin-left: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+    float: none;
+    clear: both;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    display: block;
+    margin-top: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+form input[type="text"],
+form textarea,
+form input[type="submit"] {
+    font-family: Ubuntu, Helvetica, sans-serif;
+    display: block;
+    width: 100%; /* Make the inputs take up full width */
+    margin-bottom: 15px; /* Add space between inputs */
+    padding: 10px; /* Optional: Add padding inside inputs */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+form textarea {
+    height: 100px; /* You can adjust the height as needed */
+}
 </style>
 <body>
     <div class = "load">
@@ -55,10 +103,30 @@
         <div class = "Heading">
             <div class="title">contact</div>
         </div>
-        <div class="Lines">
-            <div class="txt">thanks for visiting,</div>
-            <div class="txt">please reach out to me on my socials or email!</div>
-            <div class="txt">have a good one</div>
+        <div class = "form_wrapper">
+            <div class = form>
+                <form action="https://postmail.invotes.com/send"
+                method="post" id="email_form">
+                <label form="subject" style="font-family: Ubuntu, Helvetica, sans-serif;">Name *</label>
+                <input type="text" name="subject" placeholder="Your name..." />
+                <textarea name="text" placeholder="Message"></textarea>
+                <input type="hidden" name="access_token" value="ksk0sqtva4s91k007dp7akva" />
+                <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+            
+        
+                <!-- set the reply-to address -->
+                <input type="text" name="reply_to" placeholder="your email" />
+        
+                <!-- to split your message into 160 chars
+                    for an sms gateway -->
+                <input type="hidden" name="sms_format" value="true" />
+            
+                <input id="submit_form" type="submit" value="Send" />
+                <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+                <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+                </form>
+            </div>
         </div>
         <div class="social">
             <ul>
@@ -72,11 +140,6 @@
                         <img src="images/github-mark.png" class="contact-img-2">
                     </a>
                 </li>
-                <li>
-                    <a href="https://github.com/cmprzekop1" target = "_blank">
-                        <img src="images/Gmail-logo.png" class="contact-img-3">
-                    </a>
-                </li>
 
             </ul>
         </div>
@@ -84,7 +147,17 @@
 
 </body>
 
-
+<!-- optional, prevents the submit button from being pressed more than once -->
+<script>
+    var submitButton = document.getElementById("submit_form");
+    var form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+        setTimeout(function() {
+            submitButton.value = "Sending...";
+            submitButton.disabled = true;
+        }, 1);
+    });
+</script> 
 
 
 
