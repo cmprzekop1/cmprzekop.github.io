@@ -5,6 +5,45 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically if needed */
+}
+
+.social ul {
+    display: flex; /* Arrange list items horizontally */
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+}
+
+/* Individual list items */
+.social li {
+    margin: 0 15px; /* Add space between list items */
+    margin-bottom: 20px;
+}
+
+/* Contact images */
+
+.contact-img-1 {
+    max-width: 60px; /* Control the size of images */
+    display: block;
+}
+
+.contact-img-2 {
+    max-width: 70px; /* Control the size of images */
+    display: block;
+}
+.contact-img-3 {
+    max-width: 90px; /* Control the size of images */
+    display: block;
+}
+.contact-img-4{
+    max-width: 60px;
+    display: block;
+}
+</style>
 
 <body>
     <div class = "load">
@@ -33,6 +72,29 @@
             <div class = "txt">in my free time I really enjoy playing basketball, cooking, and reading Stephen King</div>
             <div class = "txt">check out my <a href="index.html" style = "text-decoration: none;" class="txt-2">projects</a>!</div>
         </div>
+    </div>
+    <div class="social">
+        <ul>
+            <li>
+                <a href="https://www.broadinstitute.org/" target = "_blank">
+                <img src="images/broad.jfif" class="contact-img-1">
+            </li>
+            <li>
+                <a href="https://www.spectrumcontrol.com/" target="_blank">
+                    <img src="images/spect.jpg" class="contact-img-2">
+                </a>
+            </li>
+            <li>
+                <a href="https://catalog.mit.edu/mit/research/broad-institute/" target="_blank">
+                    <img src="images/mit.png" class="contact-img-2">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/" target="_blank">
+                    <img src="images/bu.png" class="contact-img-4">
+                </a>
+            </li>
+        </ul>
     </div>
 
 </body>
