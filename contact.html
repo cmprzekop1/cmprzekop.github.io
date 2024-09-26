@@ -144,19 +144,75 @@ form textarea {
             </ul>
         </div>
     </div>
+    <div id="popupMessage" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p id="popupText"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
 
 </body>
 
-<!-- optional, prevents the submit button from being pressed more than once -->
+
 <script>
-    var submitButton = document.getElementById("submit_form");
-    var form = document.getElementById("email_form");
-    form.addEventListener("submit", function (e) {
-        setTimeout(function() {
-            submitButton.value = "Sending...";
-            submitButton.disabled = true;
-        }, 1);
+//Prevents button from being pressed more than once
+var submitButton = document.getElementById("submit_form");
+var form = document.getElementById("email_form");
+form.addEventListener("submit", function (e) {
+    setTimeout(function() {
+        submitButton.value = "Sending...";
+        submitButton.disabled = true;
+    }, 1);
+});
+document.getElementById('email_form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    const submitButton = document.getElementById('submit_form');
+    submitButton.value = 'Sending...'; // Change the button text to indicate it's sending
+    submitButton.disabled = true; // Disable the button to prevent multiple submissions
+
+    const formData = new FormData(this);
+
+    // Convert FormData to URL-encoded string using URLSearchParams
+    const urlEncodedData = new URLSearchParams();
+    formData.forEach((value, key) => {
+        urlEncodedData.append(key, value);
     });
+
+    // Send the form data via fetch with explicit headers for URL encoding
+    fetch('https://postmail.invotes.com/send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', // Set correct header
+        },
+        body: urlEncodedData.toString() // Send URL-encoded data
+    })
+    .then(response => {
+        if (response.ok) {
+            showPopup('Email Successfully Sent!'); // Handle success
+        } else {
+            return response.text().then(text => { // Try to get response text if available
+                throw new Error(text || 'Network response was not ok');
+            });
+        }
+    })
+    .catch(error => {
+        console.error('There was an error:', error);
+        showPopup('Email could not be sent: ' + error.message); // Display detailed error
+    })
+    .finally(() => {
+        submitButton.value = 'Send'; // Reset the button text
+        submitButton.disabled = false; // Re-enable the button
+    });
+});
+
+function showPopup(message) {
+    document.getElementById('popupText').innerText = message;
+    document.getElementById('popupMessage').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('popupMessage').style.display = 'none';
+}
+
 </script> 
 
 
